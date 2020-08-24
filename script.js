@@ -39,8 +39,6 @@ editBtn.addEventListener("click", changeColor);
 //fonctionnalité 4
 let editBtn1 = document.querySelectorAll(".btn-outline-secondary")[1];
 let editTxt1 = document.querySelectorAll(".card-text")[1];
-console.log(editTxt1);
-console.log(editBtn1);
 function greenText() {
   if (editTxt1.style.color === "") {
     editTxt1.style.color = "green";
@@ -53,3 +51,18 @@ editBtn1.addEventListener("click", greenText);
 
 
 //fonctionnalité 5
+let navBar = document.querySelector(".navbar");
+let bootstrap = document.querySelector("link");
+let isNuke = false;
+console.log(navBar);
+console.log(bootstrap);
+function nuke() {
+  if (isNuke === false) {
+    bootstrap.removeAttribute('rel');
+    isNuke = true;
+  } else {
+    bootstrap.setAttribute("rel","stylesheet");
+    isNuke = false;
+  }
+};
+navBar.addEventListener("dblclick", nuke);
