@@ -93,8 +93,8 @@ function moveForward(){
   let parentCards = document.querySelector("div.album > div.container > div.row");
   let firstCard = document.querySelector("div.album > div.container > div.row").firstElementChild;
   let lastCard = document.querySelector("div.album > div.container > div.row").lastElementChild;
-  console.log("firstCard = " + firstCard);
-  console.log("lastCard = " + lastCard);
+  // console.log("firstCard = " + firstCard);
+  // console.log("lastCard = " + lastCard);
   parentCards.insertBefore(lastCard, firstCard);
 };
 btnForward.addEventListener("click", moveForward);
@@ -106,9 +106,9 @@ btnBackward.href = "#";
 function moveBackward(){
   let parentCards = document.querySelector("div.album > div.container > div.row");
   let firstCard = document.querySelector("div.album > div.container > div.row").firstElementChild;
-  let lastCard = document.querySelector("div.album > div.container > div.row").lastElementChild;
-  console.log("last card = " + lastCard);
-  console.log("parentCards[5] = " + parentCards[5]);
+  // let lastCard = document.querySelector("div.album > div.container > div.row").lastElementChild;
+  // console.log("last card = " + lastCard);
+  // console.log("parentCards[5] = " + parentCards[5]);
   parentCards.insertBefore(firstCard, parentCards[5]);
 };
 btnBackward.addEventListener("click", moveBackward);
