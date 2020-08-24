@@ -119,45 +119,48 @@ let container = document.querySelector(".album > .container");
 function moveCards(){
   btnLogo.addEventListener("keypress", chooseMove);
   function chooseMove(e){
-    console.log(e.code);
+    let allCards = new Array;
     if(e.code == "KeyQ"){
-      let allCards = document.querySelectorAll(".col-md-4");
-      console.log(allCards);
+      if(document.querySelectorAll(".col-md-4").length !== 0){
+       allCards = document.querySelectorAll(".col-md-4");
+      }else{
+       allCards = document.querySelectorAll(".col-md-3");
+      };
       allCards.forEach(card => {
-        card.classList.remove("col-md-4");
-        card.classList.add("col-md-3");
-        container.classList.add("ml-0");
+        card.className = "col-md-3";
+        container.className = "container ml-0"
       });
     }else if(e.code == "KeyP"){
-      let allCards = document.querySelectorAll(".col-md-4");
-      console.log(allCards);
+      if(document.querySelectorAll(".col-md-4").length !== 0){
+       allCards = document.querySelectorAll(".col-md-4");
+      }else{
+       allCards = document.querySelectorAll(".col-md-3");
+      };
       allCards.forEach(card => {
-        card.classList.remove("col-md-4");
-        card.classList.add("col-md-3");
-        container.classList.add("mr-0");
+        card.className = "col-md-3";
+        container.className = "container mr-0";
       });
     }else if(e.code == "KeyY"){
-      let allCards = document.querySelectorAll(".col-md-4");
-      console.log(allCards);
+      if(document.querySelectorAll(".col-md-4").length !== 0){
+       allCards = document.querySelectorAll(".col-md-4");
+      }else{
+       allCards = document.querySelectorAll(".col-md-3");
+      };
+      
       allCards.forEach(card => {
-        card.classList.remove("col-md-4");
-        card.classList.add("col-md-3");
-        container.classList.add("mx-auto");
+        card.className = "col-md-3";
+        container.className = "container mx-auto";
       });
     }else if(e.code == "KeyB"){
-      let allCards = document.querySelectorAll(".col-md-4");
-      console.log(allCards);
+      if(document.querySelectorAll(".col-md-4").length !== 0){
+       allCards = document.querySelectorAll(".col-md-4");
+      }else{
+       allCards = document.querySelectorAll(".col-md-3");
+      };
       allCards.forEach(card => {
-        if (container.classList("mr-0")){
-          container.classList.remove("mr-0");
-          card.classList.remove("col-md-3");
-          card.classList.add("col-md-4");
-        } else if (container.classList("ml-0")){
-          container.classList.remove("ml-0")
-          card.classList.remove("col-md-3");
-          card.classList.add("col-md-4");
-        };
+      card.className = "container col-md-4";
       });
+      
     };
   };
 };
