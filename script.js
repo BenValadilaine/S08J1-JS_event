@@ -26,7 +26,6 @@ function editCollapse() {
 };
 hamburger.addEventListener("click", editCollapse);
 
-
 //fonctionnalité 3
 let editBtn = document.querySelector(".btn-outline-secondary");
 let editTxt = document.querySelector(".card-text");
@@ -48,8 +47,6 @@ function greenText() {
 };
 editBtn1.addEventListener("click", greenText);
 
-
-
 //fonctionnalité 5
 let navBar = document.querySelector(".navbar");
 let bootstrap = document.querySelector("link");
@@ -67,10 +64,7 @@ function nuke() {
 };
 navBar.addEventListener("dblclick", nuke);
 
-
-
 //fonctionnalité 6
-
 let cards = document.querySelectorAll(".card-body");
 let viewButtons = document.querySelectorAll(".card-body > .d-flex > .btn-group > .btn-success");
 
@@ -93,5 +87,28 @@ viewButtons.forEach(button => {
   button.addEventListener("mouseover", resizeCards);
 });
 
+//fonctionnalité 7
+let btnForward = document.querySelector(".jumbotron > div > p > .btn-secondary");
+function moveForward(){
+  let parentCards = document.querySelector("div.album > div.container > div.row");
+  let firstCard = document.querySelector("div.album > div.container > div.row").firstElementChild;
+  let lastCard = document.querySelector("div.album > div.container > div.row").lastElementChild;
+  console.log("firstCard = " + firstCard);
+  console.log("lastCard = " + lastCard);
+  parentCards.insertBefore(lastCard, firstCard);
+};
+btnForward.addEventListener("click", moveForward);
 
 
+//fonctionnalité 8
+let btnBackward = document.querySelector(".jumbotron > div > p > .btn-primary");
+btnBackward.href = "#";
+function moveBackward(){
+  let parentCards = document.querySelector("div.album > div.container > div.row");
+  let firstCard = document.querySelector("div.album > div.container > div.row").firstElementChild;
+  let lastCard = document.querySelector("div.album > div.container > div.row").lastElementChild;
+  console.log("last card = " + lastCard);
+  console.log("parentCards[5] = " + parentCards[5]);
+  parentCards.insertBefore(firstCard, parentCards[5]);
+};
+btnBackward.addEventListener("click", moveBackward);
