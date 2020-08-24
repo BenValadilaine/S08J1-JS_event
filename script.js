@@ -89,8 +89,8 @@ viewButtons.forEach(button => {
 
 //fonctionnalité 7
 let btnForward = document.querySelector(".jumbotron > div > p > .btn-secondary");
+let parentCards = document.querySelector("div.album > div.container > div.row"); // This selector is outside because we use it quite often.
 function moveForward(){
-  let parentCards = document.querySelector("div.album > div.container > div.row");
   let firstCard = document.querySelector("div.album > div.container > div.row").firstElementChild;
   let lastCard = document.querySelector("div.album > div.container > div.row").lastElementChild;
   // console.log("firstCard = " + firstCard);
@@ -104,7 +104,6 @@ btnForward.addEventListener("click", moveForward);
 let btnBackward = document.querySelector(".jumbotron > div > p > .btn-primary");
 btnBackward.href = "#";
 function moveBackward(){
-  let parentCards = document.querySelector("div.album > div.container > div.row");
   let firstCard = document.querySelector("div.album > div.container > div.row").firstElementChild;
   // let lastCard = document.querySelector("div.album > div.container > div.row").lastElementChild;
   // console.log("last card = " + lastCard);
@@ -112,3 +111,20 @@ function moveBackward(){
   parentCards.insertBefore(firstCard, parentCards[5]);
 };
 btnBackward.addEventListener("click", moveBackward);
+
+//fonctionnalité 9
+let btnLogo = document.querySelector(".navbar-brand");
+let container = document.querySelector(".album > .container");
+function moveCardsLeft(){
+  let allCards = document.querySelectorAll(".col-md-4");
+  console.log(allCards);
+  allCards.forEach(card => {
+    card.classList.remove("col-md-4");
+    card.classList.add("col-md-3");
+    container.classList.add("ml-0");
+  });
+};
+// btnLogo.addEventListener("click ", moveCardsLeft);
+['click','keypress'].forEach( evt =>
+    btnLogo.addEventListener(evt, moveCardsLeft, false)
+);
