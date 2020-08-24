@@ -146,7 +146,7 @@ function moveCards(){
       }else{
        allCards = document.querySelectorAll(".col-md-3");
       };
-      
+
       allCards.forEach(card => {
         card.className = "col-md-3";
         container.className = "container mx-auto";
@@ -159,8 +159,9 @@ function moveCards(){
       };
       allCards.forEach(card => {
       card.className = "container col-md-4";
+      container.className = "container";
       });
-      
+
     };
   };
 };
