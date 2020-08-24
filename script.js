@@ -25,3 +25,17 @@ function editCollapse() {
   console.log(hamburger);
 };
 hamburger.addEventListener("click", editCollapse);
+
+
+//fonctionnalité 3
+let editBtn = document.querySelector(".btn-outline-secondary");
+let editTxt = document.querySelector(".card-text");
+console.log(editTxt);
+console.log(editBtn);
+function changeColor() {
+  editTxt.style.color = "red";
+};
+editBtn.addEventListener("click", changeColor);
+
+
+//fonctionnalité 4
