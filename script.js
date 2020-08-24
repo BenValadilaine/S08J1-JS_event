@@ -116,56 +116,52 @@ btnBackward.addEventListener("click", moveBackward);
 let btnLogo = document.querySelector(".navbar-brand");
 let container = document.querySelector(".album > .container");
 
-function moveCardsLeft(){
-  let allCards = document.querySelectorAll(".col-md-4");
-  console.log(allCards);
-  allCards.forEach(card => {
-    card.classList.remove("col-md-4");
-    card.classList.add("col-md-3");
-    container.classList.add("ml-0");
-  });
-};
-
-function moveCardsRight(){
-  let allCards = document.querySelectorAll(".col-md-4");
-  console.log(allCards);
-  allCards.forEach(card => {
-    card.classList.remove("col-md-4");
-    card.classList.add("col-md-3");
-    container.classList.add("mr-0");
-  });
-};
-
-function moveCardsCenter(){
-  let allCards = document.querySelectorAll(".col-md-4");
-  console.log(allCards);
-  allCards.forEach(card => {
-    card.classList.remove("col-md-4");
-    card.classList.add("col-md-3");
-    container.classList.add("mx-auto");
-  });
-};
-
-function resetCards(){
-  let allCards = document.querySelectorAll(".col-md-4");
-  console.log(allCards);
-  allCards.forEach(card => {
-    if (container.classList("mr-0")){
-      container.classList.remove("mr-0");
-      card.classList.remove("col-md-3");
-      card.classList.add("col-md-4");
-    } else if (container.classList("ml-0")){
-      container.classList.remove("ml-0")
-      card.classList.remove("col-md-3");
-      card.classList.add("col-md-4");
+function moveCards(){
+  btnLogo.addEventListener("keypress", chooseMove);
+  function chooseMove(e){
+    console.log(e.code);
+    if(e.code == "KeyQ"){
+      let allCards = document.querySelectorAll(".col-md-4");
+      console.log(allCards);
+      allCards.forEach(card => {
+        card.classList.remove("col-md-4");
+        card.classList.add("col-md-3");
+        container.classList.add("ml-0");
+      });
+    }else if(e.code == "KeyP"){
+      let allCards = document.querySelectorAll(".col-md-4");
+      console.log(allCards);
+      allCards.forEach(card => {
+        card.classList.remove("col-md-4");
+        card.classList.add("col-md-3");
+        container.classList.add("mr-0");
+      });
+    }else if(e.code == "KeyY"){
+      let allCards = document.querySelectorAll(".col-md-4");
+      console.log(allCards);
+      allCards.forEach(card => {
+        card.classList.remove("col-md-4");
+        card.classList.add("col-md-3");
+        container.classList.add("mx-auto");
+      });
+    }else if(e.code == "KeyB"){
+      let allCards = document.querySelectorAll(".col-md-4");
+      console.log(allCards);
+      allCards.forEach(card => {
+        if (container.classList("mr-0")){
+          container.classList.remove("mr-0");
+          card.classList.remove("col-md-3");
+          card.classList.add("col-md-4");
+        } else if (container.classList("ml-0")){
+          container.classList.remove("ml-0")
+          card.classList.remove("col-md-3");
+          card.classList.add("col-md-4");
+        };
+      });
     };
-  });
+  };
 };
 
-//Movign cards left
-['click','keypress'].forEach( evt =>
-  btnLogo.addEventListener(evt, moveCardsLeft, false)
-);
 
 //Moving cards right
-btnLogo.addEventListener("dblclick", moveCardsRight)
+btnLogo.addEventListener("click", moveCards)
