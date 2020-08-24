@@ -66,3 +66,32 @@ function nuke() {
   }
 };
 navBar.addEventListener("dblclick", nuke);
+
+
+
+//fonctionnalité 6
+
+let cards = document.querySelectorAll(".card-body");
+let viewButtons = document.querySelectorAll(".card-body > .d-flex > .btn-group > .btn-success");
+
+function resizeCards(event){
+  let eventButton = event.target;
+  cards.forEach(card => {
+    if (card.children[0].style.visibility !== "hidden"){
+      if(eventButton.parentElement.parentElement.parentElement == card) {
+        card.children[0].style.visibility="hidden";
+        card.parentElement.children[0].style.width = "20%";
+      };
+    }else{
+      card.children[0].style.visibility = "";
+      card.parentElement.children[0].style.width = "";
+    };
+  });
+};
+
+viewButtons.forEach(button => {
+  button.addEventListener("mouseover", resizeCards);
+});
+
+
+
