@@ -167,5 +167,4 @@ function moveCards(){
 };
 
 
-//Moving cards right
-btnLogo.addEventListener("click", moveCards)
+btnLogo.addEventListener("mousedown", moveCards)
