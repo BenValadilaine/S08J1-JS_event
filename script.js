@@ -11,18 +11,11 @@ foot.addEventListener("click", footerClick);
 
 
 //fonctionnalité 2
-let hamburger = document.querySelector(".navbar-toggler");
-let hamburgerStatus = false;
-console.log(hamburger);
+let navBarHeader = document.getElementById("navbarHeader");
+let hamburger = document.querySelector(".navbar-toggler")
+console.log(navBarHeader);
 function editCollapse() {
-  if (hamburgerStatus === false) {
-    hamburger.removeAttribute('data-toggle');
-    hamburgerStatus = true;
-  } else {
-    hamburger.setAttribute("data-toggle","collapse");
-    hamburgerStatus = false;
-  }
-  console.log(hamburger);
+  navBarHeader.classList.toggle('collapse');
 };
 hamburger.addEventListener("click", editCollapse);
 
